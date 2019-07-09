@@ -8,7 +8,7 @@ module Mailboxer
 
       validates :unsubscriber, :presence => true
 
-      scope :unsubscriber, lambda { |entity| where(:unsubscriber_type => entity.class.base_class.name, :unsubscriber_id => entity.id) }
+      scope :unsubscriber, lambda { |entity| where(:unsubscriber_type => entity.class.name, :unsubscriber_id => entity.id) }
 
     end
   end
